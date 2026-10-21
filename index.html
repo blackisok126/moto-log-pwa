@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#171e29">
+<meta name="theme-color" content="#171A20">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="骑行账本">
@@ -50,30 +50,134 @@ body { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
   .app { padding-top: calc(14px + env(safe-area-inset-top)); }
 }
 
+
+/* Moto Log visual refresh + responsive iPhone form layout */
+:root{color-scheme:light;--bg:#f3f4ef;--card:#fff;--ink:#18202c;--muted:#77808e;--line:#e0e5dd;--accent:#c6f36b;--deep:#171e29;--field:#fff;--field-border:#dfe4da;--soft:#edf4e4;--soft-ink:#435532;--nav-bg:rgba(255,255,255,.94)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111720;--card:#202a38;--ink:#f2f5f8;--muted:#aab4c3;--line:#344050;--accent:#c6f36b;--deep:#171e29;--field:#18212d;--field-border:#3b4655;--soft:#293a2a;--soft-ink:#d6efb2;--nav-bg:rgba(24,32,44,.94)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111720;--card:#202a38;--ink:#f2f5f8;--muted:#aab4c3;--line:#344050;--field:#18212d;--field-border:#3b4655;--soft:#293a2a;--soft-ink:#d6efb2;--nav-bg:rgba(24,32,44,.94)}}
+body{background:var(--bg);color:var(--ink);transition:background .2s,color .2s}.logo{width:56px;height:56px;flex:0 0 56px;border-radius:18px;background:var(--accent);color:#17202a}.logo svg{width:39px;height:30px}.title{font-size:24px}.pill{background:var(--soft);color:var(--soft-ink)}.card,.action.secondary{background:var(--card);border-color:var(--line)}.nav{background:var(--nav-bg);border-color:var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.nav button{color:var(--muted)}.nav button.active{color:var(--accent)}.nav button.active span{color:var(--accent)}.field label{color:var(--muted)}.field input,.field select,.field textarea{background:var(--field);border-color:var(--field-border);color:var(--ink);min-width:0;max-width:100%}.field input::placeholder,.field textarea::placeholder{color:#9299a2}.ghost{background:var(--card);border-color:var(--line);color:var(--ink)}.notice{background:var(--soft);color:var(--soft-ink)}.notice.warning{background:#fff0df;color:#80501c}.bar{background:var(--line)}.tag{background:var(--line);color:var(--ink)}
+/* iOS date/time inputs have intrinsic minimum widths; stack fields on phones. */
+.grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}.grid2>*{min-width:0;width:100%}.field input[type="date"],.field input[type="datetime-local"],.field input[type="number"],.field select{min-width:0;width:100%;max-width:100%;padding-left:12px;padding-right:10px;font-size:16px}.field input[type="date"]{-webkit-appearance:none;appearance:none;display:block}.field{min-width:0}.card{min-width:0}.section-head{gap:8px}.section-head h2{min-width:0}.app{max-width:620px;padding-left:16px;padding-right:16px}.nav{padding-bottom:calc(9px + env(safe-area-inset-bottom));padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+@media(max-width:520px){.app{padding-left:14px;padding-right:14px}.hero{padding:18px}.actions{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:minmax(0,1fr);gap:0}.grid2 .field{margin:9px 0}.field input[type="date"]{min-height:48px}.stats{gap:8px}.stat{padding:12px}.hero-value{font-size:30px}.card{padding:14px}.section-head{margin-top:20px}}
+@media(max-width:360px){.brand{gap:9px}.logo{width:48px;height:48px;flex-basis:48px}.title{font-size:22px}.eyebrow{font-size:9px;letter-spacing:1px}.app{padding-left:10px;padding-right:10px}.hero{padding:14px}.actions{grid-template-columns:1fr}.action{min-height:88px}.stats{grid-template-columns:1fr 1fr}}
+@media(display-mode:standalone){.app{padding-top:calc(14px + env(safe-area-inset-top))}}
+
+/* VOGE-inspired premium industrial theme: graphite + metallic gray + signal yellow */
+:root{color-scheme:light;--bg:#f2f3f4;--card:#ffffff;--ink:#20242a;--muted:#737b85;--line:#dce0e4;--accent:#f5d900;--deep:#171a20;--field:#fff;--field-border:#d5d9de;--soft:#fff9cf;--soft-ink:#4c4600;--nav-bg:rgba(250,251,252,.95)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111419;--card:#20252d;--ink:#f2f4f6;--muted:#aab1bb;--line:#373e48;--accent:#f5d900;--deep:#171a20;--field:#191e25;--field-border:#414955;--soft:#343019;--soft-ink:#f7e97a;--nav-bg:rgba(23,26,32,.96)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111419;--card:#20252d;--ink:#f2f4f6;--muted:#aab1bb;--line:#373e48;--accent:#f5d900;--deep:#171a20;--field:#191e25;--field-border:#414955;--soft:#343019;--soft-ink:#f7e97a;--nav-bg:rgba(23,26,32,.96)}}
+body{background:var(--bg);color:var(--ink);transition:background .2s,color .2s}
+.hero{background:#171a20;border:1px solid #303640}.hero:after{border-color:#414955;box-shadow:0 0 0 18px #252b34,0 0 0 37px #1d232b}.stat{background:#303640}.stat em{color:#f5d900}
+.action{background:var(--deep);color:#f5d900;border:1px solid #3b424d}.action.secondary{background:var(--card);border-color:var(--line);color:var(--ink)}.action small{color:inherit;opacity:.72}
+.action .ico{width:32px;height:32px;border:1px solid currentColor;border-radius:10px;display:grid;place-items:center;font-size:20px;font-weight:500;margin-bottom:11px}
+.logo{background:#171a20;color:#f5d900;border:1px solid #303640}.logo svg{width:34px;height:34px}.pill{background:var(--soft);color:var(--soft-ink)}.nav button.active,.nav button.active span{color:var(--accent)}
+.primary{background:#f5d900;color:#171a20}.field input:focus,.field select:focus{border-color:#c6ae00;box-shadow:0 0 0 3px #f5d90035}.bar i{background:#f5d900}.notice{background:var(--soft);color:var(--soft-ink)}
+.nav button span{font-family:Arial,sans-serif;font-size:21px;font-weight:400;line-height:1.1}
+@media(max-width:520px){.action{padding:14px 12px;min-height:98px}.action .ico{width:30px;height:30px;font-size:18px;margin-bottom:9px}}
+
+/* V5 icon system: consistent rounded outline, optical weight and sizing */
+:root{--accent-ink:#756700}
+:root[data-theme="dark"]{--accent-ink:#f5d900}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent-ink:#f5d900}}
+.icon-sprite{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.ui-icon{width:20px;height:20px;display:block;flex:0 0 20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.ico{display:flex!important;align-items:center;justify-content:flex-start;width:20px;height:20px;margin-bottom:12px!important;font-size:0!important;line-height:0;border:0!important;border-radius:0!important;padding:0!important;background:transparent!important}
+.nav button span{display:flex;align-items:center;justify-content:center;width:22px;height:22px;margin:0 auto 5px;font-size:0!important;line-height:0}
+.nav button .ui-icon{width:20px;height:20px;flex-basis:20px}
+.nav button.active,.nav button.active span{color:var(--accent-ink)}
+.action .ico{color:var(--accent-ink)}
+.action{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0}
+.action b{line-height:1.35}
+.ghost{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.ghost .ui-icon{width:20px;height:20px;flex-basis:20px}
+.item-title{display:flex;align-items:center;gap:7px;min-width:0}
+.item-title .ui-icon{width:20px;height:20px;flex:0 0 20px;color:var(--accent-ink)}
+.actions-row .ghost{min-height:36px}
+@media(max-width:380px){.nav button span{width:22px;height:22px}.nav button .ui-icon{width:20px;height:20px}.ghost{gap:5px}.ghost .ui-icon{width:20px;height:20px;flex-basis:20px}}
+
+
+
+/* V6 home-card spacing and consistent hero-style fuel shortcut */
+.hero { padding: 22px 20px 18px; }
+.hero:after { z-index: 0; }
+.hero > * { position: relative; z-index: 1; }
+.bike-name {
+  color: #f5d900; font-size: 17px; font-weight: 800; line-height: 1.4;
+  letter-spacing: .1px; margin: 0 0 17px; overflow-wrap: anywhere;
+}
+.spend-summary { margin: 0 0 20px; }
+.hero .hero-label { font-size: 13px; line-height: 1.5; color: #bdc5d0; margin-bottom: 5px; }
+.hero-value {
+  font-size: clamp(30px, 8vw, 38px); font-weight: 850; line-height: 1.12;
+  letter-spacing: -1px; font-variant-numeric: tabular-nums; margin: 0;
+}
+.action.action-fuel {
+  position: relative; isolation: isolate; overflow: hidden;
+  background: #171a20; color: #f4f5f7; border: 1px solid #303640;
+}
+.action.action-fuel::after {
+  content: ""; position: absolute; z-index: 0; width: 118px; height: 118px;
+  right: -49px; top: -51px; border: 1px solid #414955; border-radius: 50%;
+  box-shadow: 0 0 0 14px #252b34, 0 0 0 29px #1d232b;
+  pointer-events: none;
+}
+.action.action-fuel > * { position: relative; z-index: 1; }
+.action.action-fuel .ico { color: #f5d900; }
+.action.action-fuel b { color: #f4f5f7; }
+.action.action-fuel small { color: #bdc5d0; opacity: 1; }
+@media(max-width:520px) {
+  .hero { padding: 20px 18px 17px; }
+  .bike-name { font-size: 17px; margin-bottom: 16px; }
+  .spend-summary { margin-bottom: 18px; }
+  .hero-value { font-size: clamp(30px, 8vw, 36px); }
+  .action.action-fuel::after { width: 108px; height: 108px; right: -48px; top: -44px; }
+}
+@media(max-width:360px) {
+  .hero { padding: 18px 15px 15px; }
+  .bike-name { font-size: 16px; margin-bottom: 14px; }
+  .spend-summary { margin-bottom: 16px; }
+  .hero-value { font-size: 29px; }
+}
+
 </style>
 </head>
 <body>
+
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+ <symbol id="i-home" viewBox="0 0 24 24"><path d="m3.5 10 8.5-7 8.5 7"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></symbol>
+ <symbol id="i-fuel" viewBox="0 0 24 24"><path d="M5.5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M8 6h5v5H8z"/><path d="M15.5 7.5h1.2l2.8 3V16a2 2 0 0 0 4 0v-4l-2.2-2.3"/><path d="M5.5 21h10"/></symbol>
+ <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.1a5.1 5.1 0 0 0-6.6 6.6l-4.9 4.9a2 2 0 0 0 2.8 2.8l4.9-4.9a5.1 5.1 0 0 0 6.6-6.6l-3.1 3.1-2.8-2.8z"/></symbol>
+ <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M5.5 20V12h3v8"/><path d="M10.5 20V4h3v16"/><path d="M15.5 20v-10h3v10"/></symbol>
+ <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+ <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></symbol>
+ <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v11"/><path d="m7.5 10 4.5 4.5 4.5-4.5"/><path d="M4 17v4h16v-4"/></symbol>
+ <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V4"/><path d="m7.5 8.5 4.5-4.5 4.5 4.5"/><path d="M4 17v4h16v-4"/></symbol>
+ <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="m6 7 1 14h10l1-14"/><path d="M9 7V4h6v3"/><path d="M10 11v6M14 11v6"/></symbol>
+</svg>
+
 <div class="app">
 <header class="top">
- <div class="brand"><div class="logo">⌁</div><div><div class="eyebrow">MOTO LOG · PERSONAL</div><div class="title">骑行账本</div></div></div>
+ <div class="brand"><div class="logo" aria-label="骑行账本标志"><svg viewBox="0 0 48 48" role="img" aria-hidden="true"><path d="M10 15 29 25 24 16 39 24 20 24 25 33Z" fill="currentColor"/></svg></div><div><div class="eyebrow">MOTO LOG · PERSONAL</div><div class="title">骑行账本</div></div></div>
  <span class="pill" id="connection">本地优先</span>
 </header>
 
 <section id="home" class="page active">
  <div class="hero">
-  <div class="hero-label" id="bikeLabel">我的摩托车 · 可在设置中修改</div>
-  <div class="hero-value" id="monthSpend">¥0.00</div>
-  <div class="hero-label">本月用车支出</div>
+  <div class="bike-name" id="bikeLabel">我的摩托车</div>
+  <div class="spend-summary">
+   <div class="hero-label">本月用车支出</div>
+   <div class="hero-value" id="monthSpend">¥0.00</div>
+  </div>
   <div class="stats">
    <div class="stat"><small>累计加油量</small><strong id="totalLitres">0.00 L</strong><em>升</em></div>
    <div class="stat"><small>累计优惠节省</small><strong id="totalSaved">¥0.00</strong><em>已记录</em></div>
   </div>
  </div>
  <div class="actions">
-  <button class="action" onclick="showPage('fuel')"><span class="ico">⛽</span><b>记一笔加油</b><small>金额、优惠、里程</small></button>
-  <button class="action secondary" onclick="showPage('service')"><span class="ico">🔧</span><b>记录保养</b><small>项目、费用、下次提醒</small></button>
+  <button class="action action-fuel" onclick="showPage('fuel')"><span class="ico" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><use href="#i-fuel"></use></svg></span><b>记一笔加油</b><small>金额、优惠、里程</small></button>
+  <button class="action secondary" onclick="showPage('service')"><span class="ico" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><use href="#i-wrench"></use></svg></span><b>记录保养</b><small>项目、费用、下次提醒</small></button>
  </div>
- <div class="section-head"><h2>保养提醒</h2><button class="ghost" onclick="showPage('service')">查看全部 →</button></div>
+ <div class="section-head"><h2>保养提醒</h2><button class="ghost" onclick="showPage('service')">查看全部 <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron-right"></use></svg></button></div>
  <div id="homeReminders"></div>
  <div class="section-head"><h2>最近记录</h2><span class="muted">最新 5 条</span></div>
  <div id="recentRecords"></div>
@@ -127,13 +231,18 @@ body { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
    <button class="primary" type="submit">保存保养记录</button>
   </form>
  </div>
- <div class="section-head"><h2>保养计划与历史</h2><button class="ghost" onclick="requestNotifications()">启用通知</button></div>
+ <div class="section-head"><h2>保养计划与历史</h2><button class="ghost" onclick="requestNotifications()"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bell"></use></svg><span>启用通知</span></button></div>
  <div class="notice">日期提醒会在打开应用时检查。浏览器本地通知受 iOS 版本、主屏幕安装方式和系统权限影响；里程提醒需要你更新当前里程。</div>
  <div id="serviceHistory"></div>
 </section>
 
 <section id="stats" class="page">
  <div class="section-head"><h2>统计与设置</h2></div>
+ <div class="card">
+  <h2 style="font-size:15px;margin:0 0 8px">外观主题</h2>
+  <div class="field"><label for="themeMode">日夜模式</label><select id="themeMode" onchange="changeTheme(this.value)"><option value="system">跟随系统</option><option value="light">浅色模式</option><option value="dark">深色模式</option></select></div>
+  <p class="muted">默认跟随 iPhone 的外观设置，也可以在这里手动指定。</p>
+ </div>
  <div class="card">
   <div class="small-heading">当前车辆名称</div>
   <div class="field"><input id="bikeName" placeholder="例如：无极 SR150S"></div>
@@ -160,18 +269,18 @@ body { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
  <div class="card">
   <h2 style="font-size:15px;margin:0 0 8px">数据备份</h2>
   <p class="muted">导出 JSON 文件可保存所有记录；也可导入之前的备份。建议每次大批量修改前先导出。</p>
-  <div class="actions-row"><button class="ghost" onclick="exportData()">导出备份 JSON</button><button class="ghost" onclick="document.getElementById('importFile').click()">导入备份</button><input id="importFile" type="file" accept="application/json,.json" hidden></div>
-  <div class="actions-row"><button class="ghost danger" onclick="clearData()">清空全部本地数据</button></div>
+  <div class="actions-row"><button class="ghost" onclick="exportData()"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-download"></use></svg><span>导出备份 JSON</span></button><button class="ghost" onclick="document.getElementById('importFile').click()"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-upload"></use></svg><span>导入备份</span></button><input id="importFile" type="file" accept="application/json,.json" hidden></div>
+  <div class="actions-row"><button class="ghost danger" onclick="clearData()"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trash"></use></svg><span>清空全部本地数据</span></button></div>
  </div>
  <p class="footer-note">隐私说明：本版本不含账号系统，也不会主动上传你的加油和保养数据。所有数据保存在此浏览器的本地存储中。</p>
 </section>
 </div>
 
 <nav class="nav">
- <button class="active" data-page="home" onclick="showPage('home')"><span>⌂</span>首页</button>
- <button data-page="fuel" onclick="showPage('fuel')"><span>⛽</span>加油</button>
- <button data-page="service" onclick="showPage('service')"><span>🔧</span>保养</button>
- <button data-page="stats" onclick="showPage('stats')"><span>▥</span>统计</button>
+ <button class="active" data-page="home" onclick="showPage('home')"><span><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-home"></use></svg></span>首页</button>
+ <button data-page="fuel" onclick="showPage('fuel')"><span><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-fuel"></use></svg></span>加油</button>
+ <button data-page="service" onclick="showPage('service')"><span><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wrench"></use></svg></span>保养</button>
+ <button data-page="stats" onclick="showPage('stats')"><span><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chart"></use></svg></span>统计</button>
 </nav>
 <script src="./app.js"></script>
 </body></html>
