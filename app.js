@@ -1,7 +1,7 @@
 const KEY='motoLogPwa_v1';
 const today=()=>new Date().toISOString().slice(0,10);
 let db={fuel:[],service:[],settings:{bikeName:'我的摩托车',region:'',grade:'92',theme:'system'}};
-function applyTheme(mode){const root=document.documentElement;if(mode==='light'||mode==='dark')root.dataset.theme=mode;else root.removeAttribute('data-theme');const meta=document.querySelector('meta[name=theme-color]');if(meta){const dark=mode==='dark'||(mode==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);meta.content=dark?'#111720':'#f3f4ef'}const sel=document.getElementById('themeMode');if(sel&&sel.value!==mode)sel.value=mode}
+function applyTheme(mode){const root=document.documentElement;if(mode==='light'||mode==='dark')root.dataset.theme=mode;else root.removeAttribute('data-theme');const dark=mode==='dark'||(mode==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);const pageColor=dark?'#111419':'#f2f3f4';root.style.backgroundColor=pageColor;document.body?.style.setProperty('background-color',pageColor);document.querySelectorAll('meta[name=theme-color]').forEach(meta=>{meta.content=pageColor});const sel=document.getElementById('themeMode');if(sel&&sel.value!==mode)sel.value=mode}
 function changeTheme(mode){db.settings={...db.settings,theme:mode};applyTheme(mode);persist()}
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{if((db.settings.theme||'system')==='system')applyTheme('system')});
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&typeof x==='object')db={...db,...x,settings:{...db.settings,...(x.settings||{})}}}catch(e){}applyTheme(db.settings.theme||'system')}

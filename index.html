@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#171A20">
+<meta name="theme-color" content="#111419" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f2f3f4" media="(prefers-color-scheme: light)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="骑行账本">
@@ -139,6 +140,28 @@ body{background:var(--bg);color:var(--ink);transition:background .2s,color .2s}
   .hero-value { font-size: 29px; }
 }
 
+
+/* iOS 26/27 Safari: extend the active theme behind the page and safe areas */
+html {
+  min-height: 100%;
+  background: var(--bg, #f2f3f4);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overscroll-behavior-y: none;
+}
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg, #f2f3f4);
+  padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+}
+.nav {
+  padding-bottom: calc(9px + env(safe-area-inset-bottom, 0px));
+  background-color: var(--nav-bg, rgba(23,26,32,.96));
+}
+@supports (-webkit-touch-callout: none) {
+  html, body { background-color: var(--bg, #f2f3f4); }
+}
 </style>
 </head>
 <body>
