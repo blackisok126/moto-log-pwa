@@ -1,0 +1,14 @@
+{
+  "name": "骑行账本 · Moto Log",
+  "short_name": "骑行账本",
+  "description": "个人摩托车加油、优惠、油耗与保养记录",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f1",
+  "theme_color": "#171e29",
+  "icons": [
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
