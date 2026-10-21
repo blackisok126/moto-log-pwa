@@ -210,7 +210,7 @@ body {
 <section id="fuel" class="page">
  <div class="section-head"><h2>加油记录</h2><span class="muted">快速记账</span></div>
  <div class="card">
-  <div class="notice">填写实际支付金额和挂牌油价，选择优惠方式。若油站小票有实际升数，建议优先填入实际升数，结果更准确。</div>
+  <div class="notice">填写挂牌油价、实际加油量和实际支付金额，优惠金额、优惠比例及实际每升成本将自动计算。</div>
   <form id="fuelForm">
    <div class="grid2">
     <div class="field"><label>加油日期</label><input type="date" id="fuelDate" required></div>
@@ -220,15 +220,11 @@ body {
     <div class="field"><label>挂牌油价（元/L）</label><input type="number" id="fuelPrice" min="0" step="0.001" placeholder="例如 8.20" required></div>
     <div class="field"><label>实际支付（元）</label><input type="number" id="fuelPaid" min="0" step="0.01" placeholder="例如 100" required></div>
    </div>
-   <div class="field"><label>优惠类型</label><select id="discountType"><option value="perL">每升优惠（元/L）</option><option value="total">总额优惠（元）</option><option value="none">无优惠</option></select></div>
-   <div class="grid2">
-    <div class="field"><label>优惠数值</label><input type="number" id="discountValue" min="0" step="0.01" value="0.50"></div>
-    <div class="field"><label>实际加油量（L，可选）</label><input type="number" id="fuelLitres" min="0" step="0.001" placeholder="按小票填写"></div>
-   </div>
+   <div class="field"><label>实际加油量（L）</label><input type="number" id="fuelLitres" min="0.001" step="0.001" placeholder="按小票填写，例如 7.62" required></div>
    <div class="field"><label>油站 / 备注（可选）</label><input id="fuelNote" placeholder="例如 XX 加油站、会员券"></div>
    <div class="field"><label><input type="checkbox" id="fullTank" checked style="width:auto;margin-right:6px">本次加满油箱（用于满箱法油耗）</label></div>
    <div class="notice" id="fuelCalc">填写金额与油价后自动计算。</div>
-   <button class="primary" type="submit">保存加油记录</button>
+   <div class="grid2"><button class="primary" id="fuelSubmitBtn" type="submit">保存加油记录</button><button class="ghost" id="cancelFuelEdit" type="button" hidden onclick="cancelFuelEdit()">取消编辑</button></div>
   </form>
  </div>
  <div class="section-head"><h2>加油历史</h2></div><div id="fuelHistory"></div>
