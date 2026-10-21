@@ -13,6 +13,43 @@
 <style>
 :root{--bg:#f4f5f1;--card:#fff;--ink:#1a2230;--muted:#727b88;--line:#e5e8e1;--accent:#c6f36b;--deep:#171e29;--red:#b84839;--green:#2f7651}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:calc(82px + env(safe-area-inset-bottom))}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:620px;margin:auto;padding:calc(14px + env(safe-area-inset-top)) 16px 20px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.brand{display:flex;gap:11px;align-items:center}.logo{width:46px;height:46px;background:var(--deep);color:var(--accent);border-radius:15px;display:grid;place-items:center;font-size:24px}.eyebrow{font-size:11px;letter-spacing:1.4px;color:var(--muted);font-weight:700}.title{font-size:23px;font-weight:800;letter-spacing:-.5px;margin-top:2px}.pill{background:#e6efd7;color:#36551c;border-radius:99px;padding:7px 10px;font-size:11px;font-weight:700}.hero{background:var(--deep);color:white;border-radius:24px;padding:20px;margin-bottom:14px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:150px;height:150px;border:1px solid #414b58;border-radius:50%;right:-48px;top:-45px;box-shadow:0 0 0 18px #222c38,0 0 0 37px #202936}.hero-label{font-size:12px;color:#bdc6d4}.hero-value{font-size:33px;font-weight:800;letter-spacing:-1px;margin:5px 0 15px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{position:relative;z-index:1;background:#293443;border-radius:15px;padding:13px}.stat small{display:block;color:#bdc6d4;font-size:11px}.stat strong{display:block;font-size:19px;margin-top:6px}.stat em{font-size:11px;font-style:normal;color:#c6f36b}.section-head{display:flex;align-items:center;justify-content:space-between;margin:22px 2px 10px}.section-head h2{font-size:16px;margin:0}.muted{font-size:12px;color:var(--muted)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.action{border:0;border-radius:17px;padding:16px 13px;text-align:left;background:var(--accent);color:#1c2815;min-height:104px}.action.secondary{background:white;border:1px solid var(--line);color:var(--ink)}.action .ico{font-size:23px;display:block;margin-bottom:10px}.action b{display:block;font-size:14px}.action small{display:block;margin-top:4px;color:#626b60;font-size:11px}.card{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:15px;margin-bottom:10px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.item-title{font-weight:750;font-size:14px}.item-sub{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}.amount{font-weight:800;font-size:16px;white-space:nowrap}.empty{text-align:center;color:var(--muted);padding:24px 12px;font-size:13px}.nav{position:fixed;z-index:5;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:9px 12px calc(9px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);max-width:620px;margin:auto}.nav button{border:0;background:transparent;color:#89919a;padding:5px 0;font-size:10px}.nav button span{display:block;font-size:20px;margin-bottom:3px}.nav button.active{color:#2b3d1d;font-weight:800}.nav button.active span{color:#537c2a}.page{display:none}.page.active{display:block}.field{margin:12px 0}.field label{display:block;font-size:12px;color:#56606c;font-weight:700;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid #dfe3da;border-radius:12px;background:#fff;padding:13px;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:#92bd4d;box-shadow:0 0 0 3px #c6f36b55}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.primary{width:100%;border:0;border-radius:13px;background:var(--deep);color:white;font-weight:750;padding:14px;margin-top:6px}.ghost{border:1px solid var(--line);background:white;border-radius:11px;padding:9px 11px;color:var(--ink);font-size:12px}.danger{color:var(--red)}.notice{background:#edf4e4;border-radius:13px;padding:12px;font-size:12px;line-height:1.6;color:#425532;margin:10px 0}.warning{background:#fff0df;color:#80501c}.bar{height:8px;background:#edf0e9;border-radius:20px;overflow:hidden;margin-top:9px}.bar i{display:block;height:100%;background:#a8d65d;border-radius:20px}.big-number{font-size:28px;font-weight:800}.small-heading{font-size:12px;color:var(--muted)}.tag{font-size:10px;padding:5px 7px;border-radius:7px;background:#f0f2ed;color:#5b6556}.actions-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.footer-note{font-size:11px;color:var(--muted);line-height:1.6;margin:18px 2px}
+
+/* iPhone / narrow-screen layout hardening */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { min-width: 0; width: 100%; overflow-x: hidden; }
+.app { width: 100%; min-width: 0; }
+.page, .card, .hero, .actions, .stats, .grid2, .section-head { min-width: 0; }
+.grid2 > *, .stats > *, .actions > * { min-width: 0; }
+.field { min-width: 0; }
+.field input:not([type="checkbox"]), .field select, .field textarea {
+  display: block; width: 100%; max-width: 100%; min-width: 0;
+  font-size: 16px; line-height: 1.35; appearance: none; -webkit-appearance: none;
+}
+.field input[type="checkbox"] { width: 18px !important; height: 18px; vertical-align: middle; }
+.card { overflow-wrap: anywhere; }
+.item-sub { overflow-wrap: anywhere; }
+.nav {
+  width: 100%; max-width: 620px; box-sizing: border-box;
+  left: 50%; right: auto; transform: translateX(-50%);
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
+  padding-bottom: calc(9px + env(safe-area-inset-bottom));
+}
+body { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
+.primary, .ghost, .action { touch-action: manipulation; }
+@media (max-width: 380px) {
+  .app { padding-left: 12px; padding-right: 12px; }
+  .hero { padding: 16px; border-radius: 20px; }
+  .hero-value { font-size: 29px; }
+  .grid2 { gap: 8px; }
+  .field input:not([type="checkbox"]), .field select, .field textarea { padding: 11px 9px; }
+  .nav button { font-size: 10px; }
+  .nav button span { font-size: 19px; }
+}
+@media (display-mode: standalone) {
+  .app { padding-top: calc(14px + env(safe-area-inset-top)); }
+}
+
 </style>
 </head>
 <body>
